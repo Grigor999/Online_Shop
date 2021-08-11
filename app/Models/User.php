@@ -41,8 +41,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     
-    public function phone()
+    public function product()
     {
-        return $this->hasOne(Histories::class);
+        return $this->belongsTo(Product::class);
+    }
+
+    public function histories()
+    {
+        return $this->hasmany(Histories::class);
+    }
+
+    public function carts()
+    {
+        return $this->hasmany(Carts::class);
     }
 }

@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class DatabasSeeder extends Seeder
+class DatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.
@@ -13,12 +13,11 @@ class DatabasSeeder extends Seeder
      */
     public function run()
     {
+        // \App\Models\User::factory(10)->create();
         $this->call([
             ProductsSeeder::class,
-            UsersSeeder::class,
             CartsSeeder::class,
             HistoriesSeeder::class,
-            
         ]);
     }
 }

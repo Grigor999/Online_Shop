@@ -16,25 +16,38 @@ class ProductsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('products')->insert([
-            'user_id' => 1,
-            'name' => Str::random(10),
-            'count' => mt_rand(10, 30),
-            'price' => mt_rand(20000, 300000),
-        ]);
 
-        DB::table('products')->insert([
-            'user_id' => 2,
-            'name' => Str::random(10),
-            'count' => mt_rand(10, 30),
-            'price' => mt_rand(20000, 300000),
-        ]);
 
-        DB::table('products')->insert([
-            'user_id' => 3,
-            'name' => Str::random(10),
-            'count' => mt_rand(10, 30),
-            'price' => mt_rand(20000, 300000),
-        ]);
+
+        for ($i = 0; $i < 10; $i++) {
+            DB::table('products')->insert([
+                'name' => Str::random(10),            
+                'user_id' => 1,
+                'count' => mt_rand(10,30),
+                'price' => mt_rand(100,300),
+            ]);
+        }
+
+        
+        // DB::table('products')->insert([
+        //     'user_id' => 1,
+        //     'name' => Str::random(10),
+        //     'count' => mt_rand(10, 30),
+        //     'price' => mt_rand(20000, 300000),
+        // ]);
+
+        // DB::table('products')->insert([
+        //     'user_id' => 2,
+        //     'name' => Str::random(10),
+        //     'count' => mt_rand(10, 30),
+        //     'price' => mt_rand(20000, 300000),
+        // ]);
+
+        // DB::table('products')->insert([
+        //     'user_id' => 3,
+        //     'name' => Str::random(10),
+        //     'count' => mt_rand(10, 30),
+        //     'price' => mt_rand(20000, 300000),
+        // ]);
     }
 }
