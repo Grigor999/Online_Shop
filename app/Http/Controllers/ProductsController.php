@@ -11,8 +11,9 @@ class ProductsController extends Controller
     public function index(){
 
         $products = Product::get();
+        $current_id = Auth::id();
 
-       return view("pages.products.index", compact("products"));
+       return view("pages.products.index", compact("products", "current_id"));
 
     }
     

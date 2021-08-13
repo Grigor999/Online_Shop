@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
-use App\Models\Product;
+// use App\Models\User;
+// use App\Models\Product;
 
 class History extends Model
 {
@@ -16,9 +16,9 @@ class History extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function products()
+    public function product()
     {
-        return $this->belongsTo(Products::class);
+        return $this->belongsTo(Product::class);
     }
 }
 

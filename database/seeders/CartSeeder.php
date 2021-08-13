@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
-class CartsSeeder extends Seeder
+class CartSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -25,9 +25,9 @@ class CartsSeeder extends Seeder
 
 
     DB::table('carts')->insert([
-        'product_id' => 1,
-        'user_id' => 1,
-        'count' => mt_rand(10,30),
+        'user_id' => mt_rand(0, 10),
+        'product_id' => mt_rand(0, 10),
+        'count' => mt_rand(0,30),
     ]);
 }
 }

@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
-class HistoriesSeeder extends Seeder
+class HistorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,10 +16,10 @@ class HistoriesSeeder extends Seeder
     public function run()
     {
         DB::table('histories')->insert([
-            'product_id' => 1,
-            'user_id' => 1,
-            'count' => mt_rand(10,30),
-            'price' => mt_rand(100,300),
+            'user_id' => mt_rand(0, 10),
+            'product_id' => mt_rand(0, 10),
+            'count' => mt_rand(0,30),
+            'price' => mt_rand(100,1000),
         ]);
     }
 }
