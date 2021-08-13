@@ -7,7 +7,8 @@
    <div class="container mt-5">
 
    <a href="/products/create">New</a>
-    <table class="table table-striped table-dark">
+   
+     <table class="table table-striped ">   {{--table-dark --}}
         <tr>
             <td>#</td>
             <td>Name</td>

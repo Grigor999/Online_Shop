@@ -5,15 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProductsRequest;
 use App\Models\Product;
+// use App\Models\Auth;
+;
 
 class ProductsController extends Controller
 {
     public function index(){
 
         $products = Product::get();
-        $current_id = Auth::id();
+        // $current_id = Auth::id();
 
-       return view("pages.products.index", compact("products", "current_id"));
+       return view("pages.products.index", compact("products",));
 
     }
     

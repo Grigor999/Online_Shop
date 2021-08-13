@@ -6,6 +6,8 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CartsController;
 use App\Http\Controllers\HistoriessController;
 
+use App\Http\Controllers\HomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,19 +20,15 @@ use App\Http\Controllers\HistoriessController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::prefix("/products")->name("products.")->group( function () {
 
     Route::get('', [ProductsController::class, "index"]);
     
-    Route::get('/create', [ProductsController::class, "create"]);
+    Route::post('/create', [ProductsController::class, "create"]);
     Route::post('/create', [ProductsController::class, "store"]);
     
     Route::get('/edit/{id}', [ProductsController::class, "edit"]); 
